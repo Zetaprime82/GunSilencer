@@ -1,0 +1,31 @@
+With the patch 8.2 sounds can only be muted/unmuted/played and no more replaced just by dropping sound files in the Sound folder.
+
+This addon mutes the hunter/rogue shooting sounds and plays the modified ones instead if specific spell event occurs.
+
+ 
+Usage:
+/gs switches on/off the old sounds. Default is on
+
+ 
+
+How it works:
+
+1. Mutes some annoying spell hit sounds (see the list in .lua file, delete the line, 
+   if u want to hear the sound again, but don't touch first 17 lines! that list hunter shooting sounds)
+
+2. Mutes hunter gun/bow/crossbow shooting sounds automatically, 
+   depending on what currently equipped and replaces them with modified versions. 
+   Unmutes the other ones on weapon change for better hearing of other players/npcs (see the info below).
+
+3. Mutes rogue pistol shot/pet roar sounds and replaces them with modified versions.
+
+4. Plays modified load/pull sounds for weapons. Does not mute the in-game ones. They don't seem to play much though.
+
+ 
+
+Muting spells/weapons sounds mutes also all the sounds coming from players/npcs. Trying to play the modified sound for those makes them equally loud, 
+no matter where they are, cause u cannot tie your own sounds to the environment with an addon.
+
+Deleting the line in .lua file (see 1.) will prevent the addon from muting the in-game sound, but will not prevent it from playing the modified version of sound. 
+So. u have to change the sound file or the addon code. There is a _Silence file in addon folder u could use. All the names of sound files are self-explanatory. 
+So feel free to change them with your own sound packs. Don't forget to restart the game for changes to take an effect.
