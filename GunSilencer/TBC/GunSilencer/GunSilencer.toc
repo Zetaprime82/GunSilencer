@@ -1,12 +1,12 @@
 ## Interface: 20501
 ## Title: GunSilencer
 ## Author: Zetaprime
-## Version: 9.1.0r
+## Version: 2.5.1r
 
-## Notes: |ffe6cc80GunSilencer|ff00ccffType /gs to switch on/off alternative shot sounds
-## Notes-deDE: |ffe6cc80Waffenschalldämpfer|ff00ccffType /gs zum Ein-/Ausschalten alternativer Schussgeräusche
-## Notes-frFR: |ffe6cc80Silencieux de pistolet|ff00ccffType /gs pour activer/désactiver les sons de tir alternatifs
-## Notes-itIT: |ffe6cc80Silenziatore per pistola|ff00ccffType /gs per attivare/disattivare i suoni dei colpi alternativi
+## Notes: Type /gs to switch on/off alternative shot sounds
+## Notes-deDE: Art /gs zum Ein-/Ausschalten alternativer Schussgeräusche
+## Notes-frFR: Taper /gs pour activer/désactiver les sons de tir alternatifs
+## Notes-itIT: Genere /gs per attivare/disattivare i suoni dei colpi alternativi
 
 ## SavedVariablesPerCharacter: _GunSilencer
 #

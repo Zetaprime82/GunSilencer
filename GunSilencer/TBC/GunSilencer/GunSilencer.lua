@@ -56,7 +56,7 @@ local MutedSounds = {
 1360718 --	sound/spells/spell_ro_pistolshot_cast_05.ogg
 }
 
-local OldGunSounds = CreateFrame("Frame", "OldGunSounds01", nil)
+local GunSilencer = CreateFrame("Frame", "GunSilencer01", nil)
 local Triggert, Triggernew = nil, nil
 local ReloadS=999999999
 local Bow, CBow, Gun = nil, nil, nil
@@ -120,18 +120,18 @@ local function ChWeapon()
 	end
 
 	if Bow then
-		filen="Interface\\AddOns\\OldGunSounds\\spell_hu_bowrelease_0"
-		filer="Interface\\AddOns\\OldGunSounds\\spell_hu_bowpullback_0"
+		filen="Interface\\AddOns\\GunSilencer\\spell_hu_bowrelease_0"
+		filer="Interface\\AddOns\\GunSilencer\\spell_hu_bowpullback_0"
 		timedelay=0.7
 		timereset=0.8
 	elseif CBow then
-		filen="Interface\\AddOns\\OldGunSounds\\spell_hu_crossbowshoot_0"
-		filer="Interface\\AddOns\\OldGunSounds\\spell_hu_crossbowload_0"
+		filen="Interface\\AddOns\\GunSilencer\\spell_hu_crossbowshoot_0"
+		filer="Interface\\AddOns\\GunSilencer\\spell_hu_crossbowload_0"
 		timedelay=0.6
 		timereset=0.7
 	else
-		filen="Interface\\AddOns\\OldGunSounds\\spell_hu_blunderbuss_weaponfire_0"
-		filer="Interface\\AddOns\\OldGunSounds\\spell_hu_blunderbuss_reload_0"
+		filen="Interface\\AddOns\\GunSilencer\\spell_hu_blunderbuss_weaponfire_0"
+		filer="Interface\\AddOns\\GunSilencer\\spell_hu_blunderbuss_reload_0"
 		timedelay=0.6
 		timereset=0.7
 	end
@@ -152,7 +152,7 @@ local function onEvent(self, event, ...)
 		else
 			ReloadS=999999999
 		end
-	elseif (event == "ADDON_LOADED" and arg1 == "OldGunSounds") then
+	elseif (event == "ADDON_LOADED" and arg1 == "GunSilencer") then
 		if _GunSilencer == nil then
 			_GunSilencer = "on"
 		end
@@ -177,7 +177,7 @@ local function onEvent(self, event, ...)
 			Bowname, CBowname, Gunname = "\229\188\147", "\229\188\169", "\230\167\141\230\162\176"
 		end
 	elseif (event == "PLAYER_LOGIN") then
-		print("|cFFFFDF00Type |cFF003FFF/ogs|cFFFFDF00 to switch on/off alternative shot sounds")
+		print("|cffe6cc80GunSilencer Loaded. Type |cff00c0ff/gs|cffe6cc80 to switch on/off alternative shot sounds")
 	elseif _GunSilencer == "on" and (event == "UNIT_SPELLCAST_SUCCEEDED") and (arg1 == "player") then
 		
 		if arg3==75 or arg3==193455 or arg3==53209 or arg3==2643 or arg3==257620 or arg3==212431 or arg3==198670 or arg3==56641 or arg3==271788 or arg3==120361 or arg3==217200 or arg3==5116 or arg3==147362 or arg3==185358 or arg3==19434 then
@@ -188,15 +188,15 @@ local function onEvent(self, event, ...)
 			PlaySoundFile(filen .. math.random(3) .. ".ogg")
 		elseif arg3==19577 or arg3==259489 then
 			ReloadS=999999999
-			PlaySoundFile("Interface\\AddOns\\OldGunSounds\\spell_hu_kill_command_cast.ogg")
+			PlaySoundFile("Interface\\AddOns\\GunSilencer\\spell_hu_kill_command_cast.ogg")
 		elseif arg3==34026 then
 			ReloadS=GetTime()
 			Triggert=1
-			PlaySoundFile("Interface\\AddOns\\OldGunSounds\\spell_hu_kill_command_cast.ogg")
+			PlaySoundFile("Interface\\AddOns\\GunSilencer\\spell_hu_kill_command_cast.ogg")
 		elseif arg3==58984 or arg3==5384 or arg3==257044 then
 			ReloadS=999999999
 		elseif arg3==185763 then
-			PlaySoundFile("Interface\\AddOns\\OldGunSounds\\spell_ro_pistolshot_cast_0" .. math.random(3) .. ".ogg")
+			PlaySoundFile("Interface\\AddOns\\GunSilencer\\spell_ro_pistolshot_cast_0" .. math.random(3) .. ".ogg")
 		elseif 	ReloadS~=999999999 or ReloadS~=999999998 then
 			ReloadS=GetTime()
 		end
@@ -228,25 +228,25 @@ local function onUp(self, elapsed)
 end
 
 
-SlashCmdList["OLDGUNSOUNDS"] = function(msg)
+SlashCmdList["GUNSILENCER"] = function(msg)
 	if _GunSilencer == "on" then
 		_GunSilencer = "off"
-		print("|cFFFFDF00Old Gun Sounds are OFF")
+		print("|cffe6cc80Gun Silencer are OFF")
 	else 
 		_GunSilencer = "on"
-		print("|cFFFFDF00Old Gun Sounds are ON")
+		print("|cffe6cc80Gun Silencer are ON")
 	end
 	MuteUnmute()
 end
-SLASH_GunSilencer1 = "/gs"
-OldGunSounds:RegisterEvent("ADDON_LOADED")
-OldGunSounds:RegisterEvent("PLAYER_ENTERING_WORLD")
-OldGunSounds:RegisterEvent("PLAYER_LOGIN")
-OldGunSounds:RegisterEvent("PLAYER_CONTROL_LOST")
-OldGunSounds:RegisterEvent("PLAYER_DEAD")
-OldGunSounds:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
-OldGunSounds:RegisterEvent("TRANSMOGRIFY_SUCCESS")
-OldGunSounds:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
-OldGunSounds:RegisterEvent("UNIT_SPELLCAST_START")
-OldGunSounds:SetScript("OnEvent", onEvent)
-OldGunSounds:SetScript("OnUpdate", onUp)
+SLASH_GUNSILENCER1 = "/gs"
+GunSilencer:RegisterEvent("ADDON_LOADED")
+GunSilencer:RegisterEvent("PLAYER_ENTERING_WORLD")
+GunSilencer:RegisterEvent("PLAYER_LOGIN")
+GunSilencer:RegisterEvent("PLAYER_CONTROL_LOST")
+GunSilencer:RegisterEvent("PLAYER_DEAD")
+GunSilencer:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
+GunSilencer:RegisterEvent("TRANSMOGRIFY_SUCCESS")
+GunSilencer:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+GunSilencer:RegisterEvent("UNIT_SPELLCAST_START")
+GunSilencer:SetScript("OnEvent", onEvent)
+GunSilencer:SetScript("OnUpdate", onUp)
