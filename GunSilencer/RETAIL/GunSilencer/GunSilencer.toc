@@ -1,0 +1,15 @@
+## Interface: 90100
+## Title: GunSilencer
+## Author: Zetaprime
+## Version: 9.1.0r
+
+## Notes: Type /gs to switch on/off alternative shot sounds
+## Notes-deDE: Art /gs zum Ein-/Ausschalten alternativer Schussgeräusche
+## Notes-frFR: Taper /gs pour activer/désactiver les sons de tir alternatifs
+## Notes-itIT: Genere /gs per attivare/disattivare i suoni dei colpi alternativi
+
+## SavedVariablesPerCharacter: _GunSilencer
+#
+# Type /gs to switch on/off
+#
+GunSilencer.lua
