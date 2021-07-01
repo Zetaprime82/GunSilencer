@@ -1,5 +1,5 @@
 local MutedSounds = {
---DON'T TOUCH THE FOLLOWING 17 LINES if u don't understand what are u doing!!!
+--HUNTER WEAPON SOUND--
 922086, --	sound/spells/spell_hu_bowrelease_01.ogg
 922088, --	sound/spells/spell_hu_bowrelease_02.ogg
 922090, --	sound/spells/spell_hu_bowrelease_03.ogg
@@ -17,7 +17,7 @@ local MutedSounds = {
 921254, --	sound/spells/spell_hu_blunderbuss_weaponfire_04.ogg
 921256, --	sound/spells/spell_hu_blunderbuss_weaponfire_05.ogg
 921258, --	sound/spells/spell_hu_blunderbuss_weaponfire_06.ogg
---U can delete the following lines, if u don't want the addon to mute the sounds. Add another ones u want to mute. Use this database https://wow.tools/files/
+--HUNTER SPELL SOUND--
 1591768, --	sound/spells/spell_hu_arcaneshot_impact_01.ogg
 1591769, --	sound/spells/spell_hu_arcaneshot_impact_02.ogg
 1591770, --	sound/spells/spell_hu_arcaneshot_impact_03.ogg
@@ -49,6 +49,7 @@ local MutedSounds = {
 1318266, --	sound/spells/spell_hu_multishot_impact01.ogg
 1318267, --	sound/spells/spell_hu_multishot_impact02.ogg
 1318268, --	sound/spells/spell_hu_multishot_impact03.ogg
+--ROGUE SPELL SOUND--
 1360714, --	sound/spells/spell_ro_pistolshot_cast_01.ogg
 1360715, --	sound/spells/spell_ro_pistolshot_cast_02.ogg
 1360716, --	sound/spells/spell_ro_pistolshot_cast_03.ogg
