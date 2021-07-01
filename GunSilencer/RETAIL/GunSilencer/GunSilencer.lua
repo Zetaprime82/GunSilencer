@@ -177,7 +177,7 @@ local function onEvent(self, event, ...)
 			Bowname, CBowname, Gunname = "\229\188\147", "\229\188\169", "\230\167\141\230\162\176"
 		end
 	elseif (event == "PLAYER_LOGIN") then
-		print("|cffe6cc80Type |cff00c0ff/gs|cffe6cc80 to switch on/off alternative shot sounds")
+		print("|cffe6cc80GunSilencer Loaded. Type |cff00c0ff/gs|cffe6cc80 to switch on/off alternative shot sounds")
 	elseif _GunSilencer == "on" and (event == "UNIT_SPELLCAST_SUCCEEDED") and (arg1 == "player") then
 		
 		if arg3==75 or arg3==193455 or arg3==53209 or arg3==2643 or arg3==257620 or arg3==212431 or arg3==198670 or arg3==56641 or arg3==271788 or arg3==120361 or arg3==217200 or arg3==5116 or arg3==147362 or arg3==185358 or arg3==19434 then
